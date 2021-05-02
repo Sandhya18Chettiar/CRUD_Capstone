@@ -7,36 +7,316 @@
     <title>Result</title>
   </head>
   <body>
+    
+    <div id="container">
+    <h1>&bull; Art Gallary &bull;</h1>
+    <div class="underline">
+    </div>
+    <div class="icon_wrapper">
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brush-fill" viewBox="0 0 16 16">
+        <path d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.118 8.118 0 0 1-3.078.132 3.659 3.659 0 0 1-.562-.135 1.382 1.382 0 0 1-.466-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04z"/>
+      </svg>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-palette" viewBox="0 0 16 16">
+        <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+        <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8zm-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7z"/>
+      </svg>
+    </div>
+
     <h1>{{msg}}</h1>
     {% if obj %}
-    <h3>{{obj.Art_Title}}</h3>
+    <center><h2>{{obj.Art_Title}}</h2> by <h3>{{obj.Artist}}</h3></center>
     <h3>{{obj.Description}}</h3>
-    <h3>{{obj.Artist}}</h3>
-    <img src="{{obj.pic.url}}" alt="" width="500" />
-    <h3>Completion Date : {{obj.Completion_Date}}</h3>
-    <h3>Category : {{obj.Category}}</h3>
+    
+    <center><img src="{{obj.pic.url}}" alt="" width="500" /></center>
+    <h4>Completion Date : {{obj.Completion_Date}}</h4>
+    <h4>Category : {{obj.Category}}</h4>
 
-    <h3>Art Item Price : {{obj.Art_Price}}</h3>
+    <h4>Art Item Price : ₹{{obj.Art_Price}}</h4>
 
-    <h3>Tags : </h3>
+    <h4>Tags : </h4>
     {% if obj.t1 %}
-    <h3>   - Acrylic Paintings</h3>
+    <h5>   - Acrylic Paintings</h5>
     {% endif %} {% if obj.t2 %}
-    <h3>   - Modern Paintings</h3>
+    <h5>   - Modern Paintings</h5>
     {% endif %} {% if obj.t3 %}
-    <h3>   - Surrealism Paintings</h3>
+    <h5>   - Surrealism Paintings</h5>
     {% endif %} {% if obj.t4 %}
-    <h3>   - Contemporary Paintings</h3>
+    <h5>   - Contemporary Paintings</h5>
     {% endif %} {% if obj.t5 %}
-    <h3>   - Figurative Paintings</h3>
+    <h5>   - Figurative Paintings</h5>
     {% endif %} {% if obj.t6 %}
-    <h3>   - Landscape Paintings</h3>
+    <h5>   - Landscape Paintings</h5>
     {% endif %} {% if obj.t7 %}
-    <h3>   - Sketching Paintings</h3>
+    <h5>   - Sketching Paintings</h5>
     {% endif %} {% if obj.t8 %}
-    <h3>   - Religion Paintings</h3>
+    <h5>   - Religion Paintings</h5>
     {% endif %}
     {% endif %}
+
+
+
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+html {
+  font-family: 'Montserrat', Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: #F2F3EB;
+}
+
+button {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, input, select, textarea {
+  color: #5A5A5A;
+  font: inherit;
+  margin: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+textarea {
+  overflow: auto;
+}
+
+#container {
+  border: solid 3px #474544;
+  max-width: 768px;
+  margin: 60px auto;
+  position: relative;
+}
+
+form {
+  padding: 37.5px;
+  margin: 50px 0;
+}
+
+h1 {
+  color: #474544;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: #77584b;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h3 {
+  color: #aa7f6c;
+  font-size: 23px;
+  font-weight: 500;
+  text-align: center;
+}
+
+h4 {
+  color: #aa7f6c;
+  font-size: 23px;
+  font-weight: 500;
+  margin-left: 60px;
+}
+
+h5 {
+  color: #a8674d;
+  font-size: 18px;
+  font-weight: 300;
+  margin-left: 80px;
+}
+
+.underline {
+  border-bottom: solid 2px #474544;
+  margin: -0.512em auto;
+  width: 80px;
+}
+
+.icon_wrapper {
+  margin: 50px auto 0;
+  width: 50%;
+}
+
+.icon {
+  display: block;
+  fill: #474544;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}
+
+.email {
+	float: right;
+	width: 45%;
+}
+
+input[type='text'], [type='email'], select, textarea {
+	background: none;
+  border: none;
+	border-bottom: solid 2px #474544;
+	color: #474544;
+	font-size: 1.000em;
+  font-weight: 400;
+  letter-spacing: 1px;
+	margin: 0em 0 1.875em 0;
+	padding: 0 0 0.875em 0;
+  text-transform: uppercase;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+input[type='text']:focus, [type='email']:focus, textarea:focus {
+	outline: none;
+	padding: 0 0 0.875em 0;
+}
+
+.Description {
+	float: none;
+}
+
+.Art_Title, .Art_Id, .Tag {
+	float: left;
+	width: 45%;
+}
+
+select {
+  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.Artist {
+  width: 100%;
+}
+
+.Art_Price {
+  width: 100%;
+}
+.Tag {
+  width: 100%;
+}
+.Category {
+  width: 100%;
+}
+
+textarea {
+	line-height: 150%;
+	height: 100px;
+	resize: none;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+	color: #474544;
+}
+
+:-moz-placeholder { 
+	color: #474544;
+	opacity: 1;
+}
+
+::-moz-placeholder {
+	color: #474544;
+	opacity: 1;
+}
+
+:-ms-input-placeholder {
+	color: #474544;
+}
+
+#form_button {
+  background: none;
+  border: solid 2px #474544;
+  color: #474544;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px 35px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#form_button:hover {
+  background: #474544;
+  color: #F2F3EB;
+}
+
+@media screen and (max-width: 768px) {
+  #container {
+    margin: 20px auto;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+  
+  .underline {
+    width: 68px;
+  }
+  
+  #form_button {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 18px;
+  }
+  
+  .icon {
+    height: 35px;
+    width: 35px;
+  }
+  
+  .underline {
+    width: 53px;
+  }
+  
+  input[type='text'], [type='email'], select, textarea {
+    font-size: 0.875em;
+  }
+}
+    </style>
 
   </body>
 </html>

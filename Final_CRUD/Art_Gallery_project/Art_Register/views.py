@@ -6,6 +6,7 @@ import shutil
 import os
 # Create your views here.
 
+# Function Based Views
 
 # def index(request):
 #     return render(request, 'index.html')
@@ -153,7 +154,7 @@ import os
 
 
 
-
+# Class Based Views
 
 class IndexView(TemplateView):
     def get(self, request, *args, **kwargs):
@@ -207,15 +208,14 @@ class ButtonView(TemplateView):
                 t8 = 0
 
             Art_Price = request.POST["Art_Price"]
-            # pic = (request.FILES["picture"])
+            
 
             pic = request.POST["picture"]
 
-            #pathimage = os.path.join("C:\Users\SANDHYA CHETTIAR\Desktop\Final_CRUD\Art_Gallery_project\photos", str(pic))
-            pathimage ="C:/Users/SANDHYA CHETTIAR/Desktop/Final_CRUD/Art_Gallery_project/photos/" + str(pic) 
-
-            shutil.copy(pathimage,"C:/Users/SANDHYA CHETTIAR/Desktop/Final_CRUD/Art_Gallery_project/media/images")
-
+            pathimage ="C:/Users/SANDHYA CHETTIAR/Documents/GitHub/CRUD_Capstone/Final_CRUD/Art_Gallery_project/photos/" + str(pic) 
+            
+            shutil.copy(pathimage,"C:/Users/SANDHYA CHETTIAR/Documents/GitHub/CRUD_Capstone/Final_CRUD/Art_Gallery_project/media/images")
+            
             obj = ArtInformation.objects.create(
                 Art_Id=id, Art_Title=Art_Title, Description=Description, Artist=Artist, Completion_Date=Completion_Date, Category=Category, t1=t1, t2=t2, t3=t3, t4=t4, t5=t5, t6=t6, t7=t7, t8=t8, Art_Price=Art_Price, pic="images/"+pic)
 
@@ -270,8 +270,7 @@ class ButtonView(TemplateView):
                 t8 = 0
 
             Art_Price = request.POST["Art_Price"]
-            pic = request.POST["picture"]
-
+            
 
             obj = ArtInformation.objects.get(pk=id)
             obj.Art_Id = id
@@ -281,7 +280,6 @@ class ButtonView(TemplateView):
             obj.Completion_Date = Completion_Date
             obj.Category = Category
             obj.Art_Price = Art_Price
-            obj.pic = pic
             
             obj.t1 = t1
             obj.t2 = t2
@@ -291,6 +289,7 @@ class ButtonView(TemplateView):
             obj.t6 = t6
             obj.t7 = t7
             obj.t8 = t8
+
             obj.save()
             msg = "Record Updated"
             return render(request, 'result.html', {'msg': msg})
