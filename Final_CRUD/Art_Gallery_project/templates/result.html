@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+  </head>
+  <body>
+    <h1>{{msg}}</h1>
+    {% if obj %}
+    <h3>{{obj.Art_Title}}</h3>
+    <h3>{{obj.Description}}</h3>
+    <h3>{{obj.Artist}}</h3>
+    <img src="{{obj.pic.url}}" alt="" width="500" />
+    <h3>Completion Date : {{obj.Completion_Date}}</h3>
+    <h3>Category : {{obj.Category}}</h3>
+
+    <h3>Art Item Price : {{obj.Art_Price}}</h3>
+
+    <h3>Tags : </h3>
+    {% if obj.t1 %}
+    <h3>   - Acrylic Paintings</h3>
+    {% endif %} {% if obj.t2 %}
+    <h3>   - Modern Paintings</h3>
+    {% endif %} {% if obj.t3 %}
+    <h3>   - Surrealism Paintings</h3>
+    {% endif %} {% if obj.t4 %}
+    <h3>   - Contemporary Paintings</h3>
+    {% endif %} {% if obj.t5 %}
+    <h3>   - Figurative Paintings</h3>
+    {% endif %} {% if obj.t6 %}
+    <h3>   - Landscape Paintings</h3>
+    {% endif %} {% if obj.t7 %}
+    <h3>   - Sketching Paintings</h3>
+    {% endif %} {% if obj.t8 %}
+    <h3>   - Religion Paintings</h3>
+    {% endif %}
+    {% endif %}
+
+  </body>
+</html>
